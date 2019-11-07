@@ -1,27 +1,77 @@
 {
-  "name": "todo",
+  "name": "oxssy-todo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "oxssy": "^0.2.3",
+    "pug": "^2.0.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.1.2",
     "todomvc-app-css": "^2.1.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.3",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jest": "^21.2.1",
+    "jest-cli": "^23.6.0",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.18.9",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "postcss-loader": "^2.1.1",
+    "precss": "^3.1.1",
+    "progress-bar-webpack-plugin": "^1.10.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "script-loader": "^0.7.2",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "scripts": {
+    "build": "rimraf ./public/bundle.js && webpack --config webpack.config.js",
+    "build:watch": "rimraf ./public/bundle.js && webpack --config webpack.config.js --watch",
+    "dev": "nodemon server/server.js --exec babel-node",
+    "test": "jest",
+    "lint": "eslint --color --ext .js app/** && eslint --color --ext .jsx,.js ./**",
+    "lint:fix": "eslint --color --ext .js --fix app/** && eslint --color --ext .jsx,.js --fix ./**"
   },
   "browserslist": [
     ">0.2%",
-    "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "common/**/*.{js,jsx,ts,tsx}",
+      "!common/**/*.d.ts"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.shim.js",
+      "<rootDir>/jest.init.js"
+    ],
+    "testMatch": [
+      "<rootDir>/common/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/common/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ]
+  }
 }

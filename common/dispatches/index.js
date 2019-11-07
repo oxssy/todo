@@ -1,5 +1,5 @@
-import { inputText, todos, filters } from '../models';
 import { Oxssy, OxssyMap } from 'oxssy';
+import { inputText, todos, filters } from '../models';
 
 export const addTodo = (e) => {
   e.preventDefault();
@@ -21,7 +21,7 @@ export const addTodo = (e) => {
 export const deleteTodo = (index, e) => {
   e.preventDefault();
   todos.splice(index, 1);
-}
+};
 
 export const selectFilterActive = (e) => {
   e.preventDefault();
@@ -29,7 +29,7 @@ export const selectFilterActive = (e) => {
     active: true,
     complete: false,
   });
-}
+};
 
 export const selectFilterComplete = (e) => {
   e.preventDefault();
@@ -37,7 +37,7 @@ export const selectFilterComplete = (e) => {
     active: false,
     complete: true,
   });
-}
+};
 
 export const selectFilterAll = (e) => {
   e.preventDefault();
@@ -45,4 +45,4 @@ export const selectFilterAll = (e) => {
     active: false,
     complete: false,
   });
-}
+};

@@ -1,4 +1,4 @@
-import { Oxssy, OxssyArray, OxssyMap } from "oxssy";
+import { Oxssy, OxssyArray, OxssyMap } from 'oxssy';
 
 export const todos = new OxssyArray();
 export const inputText = new Oxssy('', true);

@@ -8,7 +8,7 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "oxssy": "^0.2.3",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "todomvc-app-css": "^2.1.2"
